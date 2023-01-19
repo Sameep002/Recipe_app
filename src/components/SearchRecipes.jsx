@@ -149,8 +149,8 @@ const SearchRecipes = () => {
             </div> */}
 
 
-            <div className='w-3/4 m-auto my-4'>
-                <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div className='mx-2 md:mx-auto md:w-3/4 xl:w-3/5 my-4'>
+                <label htmlFor="default-search" className=" mb-2 text-sm md:text-md xl:text-base font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div className="relative">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -158,14 +158,14 @@ const SearchRecipes = () => {
                     <input value={Search} onChange={(e) => {
                         e.preventDefault();
                         setSearch(e.target.value);
-                    }} type="text" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Recipes..." required />
-                    <button onClick={fetchRecipes} className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    }} type="text" id="default-search" className="block w-full p-4 pl-10 text-sm md:text-md xl:text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Recipes..." required />
+                    <button onClick={fetchRecipes} className="text-white absolute text-sm md:text-md xl:text-base right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
-                <div className='text-3xl text-center my-6'>{Search}</div>
+                {/* <div className='text-3xl text-center my-6'>{Search}</div> */}
             </div>
 
 
-            <section className='flex flex-wrap justify-evenly mt-10 w-full '>
+            <section className='flex flex-wrap justify-evenly mt-4 sm:mt-10 w-full '>
                 {
                     Recipes.map((element) => {
                         return (
@@ -185,21 +185,21 @@ const SearchRecipes = () => {
                             //         <p className="mb-3 text-white">Recipe: <a className='text-blue-500' href={element.spoonacularSourceUrl}>{element.sourceName}</a></p>
                             //     </div>
                             // </div>
-                            <div key={element.id} className="flex justify-center h-[255px] m-2">
-                                <div className=" flex flex-col md:flex-row md:max-w-xl rounded-lg bg-gray-800 shadow-lg p-2">
-                                    <img className="w-48 h-full object-cover" src={element.image} alt="" />
-                                    <div className="px-4 py-2 flex flex-col justify-start">
-                                        <h5 className="text-white text-xl font-medium mb-2">{element.title}</h5>
-                                        <div className="px-2">
-                                            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">{element.vegeterian ? "Vegeterian" : "Non-vegeterian"}</span>
-                                            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">{element.vegan ? "Vegan" : "Non-Vegan"}</span>
-                                            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">{element.glutenFree ? "glutenFree" : "Non-glutenFree"}</span>
+                            <div key={element.id} className="flex justify-center h-[130px] overflow-hidden md:h-[210px] xl:h-[255px] m-2">
+                                <div className=" flex sm:flex-col md:flex-row w-[300px] md:w-[440px] xl:w-[550px] rounded-lg bg-gray-800 shadow-lg p-2">
+                                    <img className="w-36 sm:w-48 h-full object-cover" src={element.image} alt="" />
+                                    <div className="px-2 md:px-4 py-2 flex flex-col justify-start">
+                                        <h5 className="text-white text-xs font-bold md:text-base xl:text-xl mb-2">{element.title}</h5>
+                                        <div className=" hidden md:block text-[10px] xl:text-sm">
+                                            <span className="inline-block bg-gray-200 rounded-full px-1 md:px-2 py-1  font-semibold text-gray-700 mr-2 mb-2">{element.vegeterian ? "Vegeterian" : "Non-vegeterian"}</span>
+                                            <span className="inline-block bg-gray-200 rounded-full px-1 md:px-2 py-1 font-semibold text-gray-700 mr-2 mb-2">{element.vegan ? "Vegan" : "Non-Vegan"}</span>
+                                            {/* <span className="inline-block bg-gray-200 rounded-full px-1 md:px-2 py-1 text-[10px] font-semibold text-gray-700 mr-2 mb-2">{element.glutenFree ? "glutenFree" : "Non-glutenFree"}</span> */}
                                         </div>
-                                        <div className="">
+                                        <div className="text-xs md:text-sm xl:text-base">
                                             <div className='text-white'>Ready in: {element.readyInMinutes} minutes</div>
                                             <div className='text-white'>Servings: {element.servings}</div>
                                         </div>
-                                        <p className="mb-3 mt-2 text-white"><a className='text-blue-500' target="_blank" href={element.spoonacularSourceUrl}>View Recipe</a></p>
+                                        <p className="text-xs md:text-sm xl:text-base md:mb-2 mt-2 text-white"><a className='text-blue-500' rel="noreferrer" target="_blank" href={element.spoonacularSourceUrl}>View Recipe</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +208,7 @@ const SearchRecipes = () => {
                 }
             </section>
 
-            <footer className="bg-black text-center text-lg-start">
+            <footer className="bg-black text-center text-xs sm:text-lg-start">
                 <div className="text-center text-white p-3">
                     © 2020 Copyright:
                     <span className="text-white"><Link to="/">MyRecipeBook.com</Link></span>

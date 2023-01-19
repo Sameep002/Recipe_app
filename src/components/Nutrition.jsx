@@ -21,7 +21,7 @@ const Nutrition = () => {
   // const { calories , carbs , fat , protein} = Nutrition;
   return (
     <>
-      <div className='w-3/4 m-auto my-4'>
+      <div className='mx-2 md:mx-auto md:w-3/4 xl:w-3/5 my-4'>
         <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -36,7 +36,7 @@ const Nutrition = () => {
         <div className='text-3xl text-center my-6'>{Search}</div>
       </div>
 
-      <div className="overflow-x-auto relative shadow-md sm:rounded-lg w-3/4 mx-auto my-20">
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg w-full p-2 sm:p-0 sm:w-3/4 mx-auto my-8 sm:my-20">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
             <tr>
@@ -99,7 +99,7 @@ const Nutrition = () => {
           </tbody>
         </table>
       </div>
-      <footer className="bg-black text-center text-lg-start bottom-0 fixed w-full">
+      <footer className="bg-black text-center text-xs sm:text-lg-start bottom-0 fixed w-full">
         <div className="text-center text-white p-3">
           © 2020 Copyright:
           <span className="text-white"><Link to="/">MyRecipeBook.com</Link></span>

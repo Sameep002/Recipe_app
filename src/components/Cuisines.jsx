@@ -54,27 +54,27 @@ const Cuisines = () => {
       // }, []);
   }
   return (
-    <><div className="bg-[#EEEEEE]">
-      <div className='text-center text-gray-800 text-5xl font-bold py-6 italic'>Cuisines</div>
-      <div className="flex space-x-12 justify-center py-">
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='indian' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Indian</button>
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='italian' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Italian</button>
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='chinese' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Chinese</button>
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='french' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">French</button>
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='mexican' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Mexican</button>
-        <button onClick={(e) => fetchrecipe(e.target.value)} value='american' type="button" className="transition px-6 py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">American</button>
+    <><div className="bg-[#EEEEEE] overflow-hidden">
+      <div className='text-center text-gray-800 text-xl md:text-3xl xl:text-5xl font-bold py-3 md:py-6 italic'>Cuisines</div>
+      <div className="flex text-[10px] md:text-base space-x-1 md:space-x-6 xl:space-x-12 justify-center ">
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='indian' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Indian</button>
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='italian' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Italian</button>
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='chinese' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Chinese</button>
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='french' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">French</button>
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='mexican' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">Mexican</button>
+        <button onClick={(e) => fetchrecipe(e.target.value)} value='american' type="button" className="transition px-1 py-1 md:px-6 md:py-2.5 text-white ease-in-out delay-150 bg-gray-800 rounded shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-orange-500 duration-300">American</button>
       </div>
 
-      <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <div className="p-6 md:p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {
           Recipes.map((element) => {
             return (
               <>
-                <div key={element.id} className="rounded-3xl overflow-hidden shadow-lg bg-gray-800 w-4/5 m-auto">
-                  <img className="w-full" src={element.image || "./images/recipebk.jpg"} />
-                  <div className="px-6 py-4 text-center">
-                    <div className="font-bold text-xl text-white mb-2">{element.title}</div>
-                    <div className='text-blue-500'><a target="_blank" href={element.spoonacularSourceUrl}>View Recipe</a></div>
+                <div key={element.id} className="flex md:flex-col md:h-[260px] xl:h-[350px] rounded  shadow-lg bg-gray-800 w-full md:w-4/5 m-auto">
+                  <img className="p-1 w-1/2 h-full md:h-auto md:w-full" src={element.image || "./images/recipebk.jpg"} />
+                  <div className=" sm:px-6 sm:py-4 mx-auto text-center p-1 sm:p-0 flex flex-col items-center justify-center md:overflow-hidden">
+                    <div className="font-bold text-xs md:text-base xl:text-xl text-white mb-2">{element.title}</div>
+                    <div className='text-blue-500 text-[10px] md:text-sm xl:text-base'><a target="_blank" href={element.spoonacularSourceUrl}>View Recipe</a></div>
                   </div>
                 </div>
               </>
